@@ -1,0 +1,36 @@
+html {
+    background-color: aqua;
+}
+
+nav {
+    display: flex;
+}
+
+nav.main_nav a.active {
+    background-color: black;
+    color: white;
+}
+
+nav.main_nav a {
+    display: flex;
+    color: black;
+    background-color: white;
+    text-decoration: none;
+    border: 2px solid black;
+    text-transform: uppercase;
+    width: 15vw;
+    text-align: center;
+    padding: 10px;
+}
+.error{
+    color: red;
+}
+
+form {
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-style:oblique
+}
