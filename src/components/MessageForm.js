@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import { addMessage } from '../util';
 
 const MessageForm = () => {
-    [message, setMessage] = useState('')
+    const [message, setMessage] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault()

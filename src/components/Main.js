@@ -41,7 +41,7 @@ useEffect(async () => {
               <Route path='/register' element={ <AccountForm setToken={setToken} action="register" setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser} />}/>
               <Route path='/login' element={ <AccountForm setToken={setToken} action="login" setIsLoggedIn={setIsLoggedIn} isLoggedIn={isLoggedIn} setCurrentUser={setCurrentUser} currentUser={currentUser} />}/>
               <Route path='/posts' element={ <Posts token={token} currentUser={currentUser} setPosts={setPosts} posts={posts}/>}/>
-              <Route path ='/add_post' element={<AddPost setToken={setToken} token={token} action="add post" setPosts={setPosts} /> }/>
+              <Route path ='/add_post' element={<AddPost token={token} /> }/>
               <Route path = '/Profile' element={<Profile isLoggedIn={isLoggedIn} currentUser={currentUser}/>}/>
               <Route path ='/posts/:postId' element={<PostView posts={posts} token={token} isLoggedIn={isLoggedIn} />}/>
               <Route path={`/{accountPage}`} element={ <> 

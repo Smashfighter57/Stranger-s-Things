@@ -1,8 +1,8 @@
-const BASE_URL = 'http://localhost:4000/api/2108-CSE-RM-WEB-PT'
+const BASE_URL = 'https://strangers-things.herokuapp.com/api/2108-CSE-RM-WEB-PT'
 
 export const fetchPosts = async () => {
     try {
-        const response = await fetch('http://localhost:4000/api/2108-CSE-RM-WEB-PT/posts')
+        const response = await fetch (`${BASE_URL}/posts`)
         const result = await response.json()
         return result.data.posts
     }catch(error) {
@@ -16,7 +16,7 @@ export const fetchUserData = async (token) => {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
         }
-        const response = await fetch('http://localhost:4000/api/2108-CSE-RM-WEB-PT/guests/me', {
+        const response = await fetch(`${BASE_URL}/guests/me`, {
             headers: user_data_headers
         })
         const result = await response.json()
@@ -28,7 +28,7 @@ export const fetchUserData = async (token) => {
 
 export const addPost = async (token, post) => {
     try {
-        const response = await fetch('http://localhost:4000/api/2108-CSE-RM-WEB-PT/posts', {
+        const response = await fetch(`${BASE_URL}/posts`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -47,7 +47,7 @@ export const addPost = async (token, post) => {
 
 export const deletePost = async(token, post_id) => {
     try {
-        const response = await fetch(`http://localhost:4000/api/2108-CSE-RM-WEB-PT/posts/${post_id}`, {
+        const response = await fetch(`${BASE_URL}/posts/${post_id}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ export const deletePost = async(token, post_id) => {
 
 export const addMessage = async (token, post_id, comment) => {
     try {
-        const response = await fetch(`http://localhost:4000/api/2108-CSE-RM-WEB-PT/posts/${post_id}/comments`, {
+        const response = await fetch(`${BASE_URL}/${post_id}/comments`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',

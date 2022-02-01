@@ -1,11 +1,13 @@
 import React, { useState, useEffect} from "react";
-import PostSingle from "./PostSingle"; 
+import PostSingle from "./PostSingle";
+import { AddPost } from "."; 
 import { deletePost } from '../util'
 import { Link, useSearchParams } from "react-router-dom";
 import PostView from "./PostView";
 
 const Posts = ({currentUser, token, setPosts, posts}) => {
     //const [posts, setPosts] = useState([])
+    console.log(token);
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [price, setPrice] = useState("")
@@ -75,14 +77,7 @@ const Posts = ({currentUser, token, setPosts, posts}) => {
         })
         : <h5>There are no posts to display</h5>
     }
-    <form>
-        <div><input type="text" value={title} placeholder="Title" onChange={(ev)=>{setTitle(ev.target.value)}}/></div>
-        <div><input type="text" value={description} placeholder="Description" onChange={(ev)=>{setDescription(ev.target.value)}}/></div>
-        <div><input type="text" value={price} placeholder="Price" onChange={(ev)=>{setPrice(ev.target.value)}}/></div>
-        <div><input type="text" value={location} placeholder="Location" onChange={(ev)=>{setLocation(ev.target.value)}}/></div>
-        <div><button type="submit">Submit Post</button></div>
-    </form>
-    
+    <AddPost token = {token} />
     </>
 }
 

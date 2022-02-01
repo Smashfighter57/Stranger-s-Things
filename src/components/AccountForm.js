@@ -21,7 +21,7 @@ const AccountForm = ({setToken, action, setIsLoggedIn, isLoggedIn}) => {
             }
             console.log(user_data_headers)
 
-            const response = await fetch(`https://strangers-things.herokuapp.com/api/2108-CSE-RM-WEB-PT/guests/me`, {
+            const response = await fetch(`https://strangers-things.herokuapp.com/api/2108-CSE-RM-WEB-PT/users/me`, {
                 headers: user_data_headers
             })
             const result = await response.json()
@@ -35,6 +35,7 @@ const AccountForm = ({setToken, action, setIsLoggedIn, isLoggedIn}) => {
     const submitAccountInfo = async (event) => {
         try{
             event.preventDefault();
+            console.log(action);
             const response = await fetch(`https://strangers-things.herokuapp.com/api/2108-CSE-RM-WEB-PT/users/${action}`, {
                 method: "POST",
                 headers: {
